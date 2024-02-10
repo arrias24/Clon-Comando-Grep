@@ -1,0 +1,33 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "cppbuild",
+			"label": "C/C++: Compilar y guardar en bin",
+			"command": "C:\\msys64\\ucrt64\\bin\\g++",
+			"args": [
+				"-fdiagnostics-color=always",
+				"-g",
+				"${file}",
+				"-o",
+				"${workspaceFolder}/bin/${fileBasenameNoExtension}.exe"
+			],
+			"options": {
+				"cwd": "${fileDirname}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"detail": "compilador: C:\\msys64\\ucrt64\\bin\\g++"
+		}
+		
+	]
+}
+
+
+
+
