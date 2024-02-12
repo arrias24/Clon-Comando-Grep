@@ -5,20 +5,25 @@
 using namespace std;
 int main(int argc, char** args){
 
-    //VARIABLES
+    //ABRIMOS EL ARCHIVO
 
     fstream archivo;
-    string texto[1200] = {};
-
-    //ABRIMOS EL ARCHIVO DE TEXTO DESDE EL ARGUMENTO
-
-    archivo.open(args[1]); 
-
-    //ASEGURAMOS DE QUE SE ABRIO CORRECTAMENTE
+    archivo.open(args[1]);
 
     if (!archivo.is_open()) {
-        cout << "El archivo no se pudo iniciar" << endl; 
+        cout << "El archivo no se pudo abrir" << endl; 
         return 0;
+    }
+
+    //CREAMOS BUCLE PARA GUARDAR EL TEXTO Y CONTAMOS LAS PALABRAS  
+
+    string texto_completo[1000] = {};
+    int numero_palabras = 0;
+
+    while (archivo.good())
+    {
+        archivo>>texto_completo[numero_palabras];
+        numero_palabras++;
     }
 
     return 0;
