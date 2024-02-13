@@ -1,7 +1,9 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <windows.h>
 using namespace std;
+HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 
 //FUNCION 
 
@@ -39,6 +41,11 @@ int main(int argc, char** args){
     
     string palabra_buscada = args[2];
     transformarMinuscula(palabra_buscada);
+
+    //COLOR PARA RESALTAR TEXTOS
+
+    string numero_color = args[3];
+    int color_texto = std::stoi(numero_color);
 
 
     return 0;
