@@ -1,8 +1,17 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-
 using namespace std;
+
+//FUNCION 
+
+void transformarMinuscula(string &cadena){
+    for(int i = 0; i < cadena.length(); i++){
+        cadena[i] = tolower(cadena[i]);
+    }
+}
+
+
 int main(int argc, char** args){
 
     //ABRIMOS EL ARCHIVO
@@ -25,6 +34,12 @@ int main(int argc, char** args){
         archivo>>texto_completo[numero_palabras];
         numero_palabras++;
     }
+
+    //GUARDAMOS PALABRA A BUSCAR Y LA TRANSFORMAMOS EN MINUSCULA
+    
+    string palabra_buscada = args[2];
+    transformarMinuscula(palabra_buscada);
+
 
     return 0;
 }
