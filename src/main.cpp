@@ -26,17 +26,6 @@ int main(int argc, char** args){
         return 0;
     }
 
-    //CREAMOS BUCLE PARA GUARDAR EL TEXTO Y CONTAMOS LAS PALABRAS  
-
-    string texto_completo[1000] = {};
-    int numero_palabras = 0;
-
-    while (archivo.good())
-    {
-        archivo>>texto_completo[numero_palabras];
-        numero_palabras++;
-    }
-
     //GUARDAMOS PALABRA A BUSCAR Y LA TRANSFORMAMOS EN MINUSCULA
     
     string palabra_buscada = args[2];
