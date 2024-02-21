@@ -29,7 +29,6 @@ void resaltarPalabra(const string& palabra, const string& palabra_buscada, int c
     cout << palabra.substr(inicio) << " ";
 }
 
-
 int main(int argc, char** args){
 
     //ABRIMOS EL ARCHIVO
@@ -47,12 +46,25 @@ int main(int argc, char** args){
     string palabra_buscada = args[2];
     transformarMinuscula(palabra_buscada);
     int coincidencias = 0;
+    int numero_lineas = 0;
 
     //COLOR PARA RESALTAR TEXTOS
 
     string numero_color = args[3];
     int color_texto = std::stoi(numero_color);
 
+    //MOSTRAMOS LINEA DE COINCIDENCIA Y RESALTAMOS PALABRA BUSCADA
+
+    string linea;
+    while (getline(archivo, linea)) {
+        transformarMinuscula(linea);
+        if (linea.find(palabra_buscada) != string::npos) {
+            resaltarPalabra(linea, palabra_buscada, color_texto, coincidencias);
+            cout << endl;
+            numero_lineas++;
+        }
+    }
+    cout << coincidencias << " coincidencias en " << numero_lineas << " lineas.";
 
     return 0;
 }
